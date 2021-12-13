@@ -7,7 +7,7 @@
     
     .snow{
 background-image: url(https://img1.picmix.com/output/stamp/normal/0/0/5/7/1087500_bfe7a.gif);
-   height: 100vh;
+   height: 80vh;
   background-size: cover;
   background-position: center;
     }
@@ -17,7 +17,7 @@ background-color: var(--happyFeet-Dark);
 }
 
     body{
-        min-height: 100vh;
+        min-height: 80vh;
         display: flex;
         flex-direction: column;
         background-color: var(--happyFeet-Dark);
@@ -35,3 +35,10 @@ background-color: var(--happyFeet-Dark);
     footer{
         background-color: var(--happyFeet-Secondary);
     }
+
+    .specialCard {
+        background-color: whitesmoke;
+    opacity: .9;
+    }
+
+  

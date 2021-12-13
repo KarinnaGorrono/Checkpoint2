@@ -2,7 +2,7 @@
 let clickUpgrades = {
 
     dance1: {
-        name: "Swat the Bee",
+        name: "Hands in Pockets",
         price: 60,
         quantity: 0,
         multiplier: 20,
@@ -11,7 +11,7 @@ let clickUpgrades = {
     },
 
     dance2: {
-        name: "Hands in Pockets",
+        name: "Confident",
         price: 50,
         quantity: 0,
         multiplier: 4,
@@ -19,7 +19,7 @@ let clickUpgrades = {
     },
 
     dance3: {
-        name: "Shoot that Basketball without lookin'",
+        name: "Spirit Fingers",
         price: 40,
         quantity: 0,
         multiplier: 4,
@@ -27,8 +27,15 @@ let clickUpgrades = {
     },
 
     dance4: {
-        name: "The 'I see you audience' - Confident",
+        name: "Strike a Pose",
         price: 30,
+        quantity: 0,
+        multplier: 4
+    },
+
+    dance5: {
+        name: "Swat the Bee",
+        price: 20,
         quantity: 0,
         multplier: 4
     },
@@ -67,7 +74,27 @@ function autoUpgrades() {
 }
 
 function upgradeDance6() {
-    let move = automaticUpgrades.dance5
+    let move = automaticUpgrades.dance6
+    if (happy >= move.price) {
+        move.quantity++
+        happy -= move.price
+        move.price *= 2
+    }
+    update()
+}
+
+function upgradeDance5() {
+    let move = clickUpgrades.dance5
+    if (happy >= move.price) {
+        move.quantity++
+        happy -= move.price
+        move.price += 2
+    }
+    update()
+}
+
+function upgradeDance4() {
+    let move = clickUpgrades.dance4
     if (happy >= move.price) {
         move.quantity++
         happy -= move.price
@@ -77,10 +104,77 @@ function upgradeDance6() {
 }
 
 
+function upgradeDance3() {
+    let move = clickUpgrades.dance3
+    if (happy >= move.price) {
+        move.quantity++
+        happy -= move.price
+        move.price *= 2
+    }
+    update()
+}
 
+
+function upgradeDance2() {
+    let move = clickUpgrades.dance2
+    if (happy >= move.price) {
+        move.quantity++
+        happy -= move.price
+        move.price *= 2
+    }
+    update()
+}
+
+
+function upgradeDance1() {
+    let move = clickUpgrades.dance1
+    if (happy >= move.price) {
+        move.quantity++
+        happy -= move.price
+        move.price *= 2
+    }
+    update()
+}
+
+
+function getImage(happy) {
+
+    var image = "";
+    if (happy <= 10) {
+        image = "https://thumbs.gfycat.com/WarpedAchingHagfish-size_restricted.gif"
+    }
+    else {
+        image = "https://media3.giphy.com/media/l0E9CrSVVI3g4/giphy.gif"
+    }
+    return image;
+    update()
+}
+
+
+
+
+// function imgSwap() {
+
+//     if (happy <= 10) {
+
+//         document.getElementById("img").src = "https://thumbs.gfycat.com/WarpedAchingHagfish-size_restricted.gif";
+
+//     } else {
+//         document.getElementById("img").src = "https://media3.giphy.com/media/l0E9CrSVVI3g4/giphy.gif";
+//     }
+
+// }
 
 
 function update() {
     document.getElementById('happy').innerText = `${happy}`
     document.getElementById('dance6').innerText = `${automaticUpgrades.dance6.quantity}`
+    document.getElementById('dance5').innerText = `${clickUpgrades.dance5.quantity}`
+    document.getElementById('dance4').innerText = `${clickUpgrades.dance4.quantity}`
+    document.getElementById('dance3').innerText = `${clickUpgrades.dance3.quantity}`
+    document.getElementById('dance2').innerText = `${clickUpgrades.dance2.quantity}`
+    document.getElementById('dance1').innerText = `${clickUpgrades.dance1.quantity}`
+    document.getElementById('imgSwap').innerHTML = `${happy}`
 }
+
+setInterval(autoUpgrades, 1000)

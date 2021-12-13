@@ -139,7 +139,7 @@ function upgradeDance1() {
 
 function getImage(happy) {
 
-    var image = "";
+    let image = "";
     if (happy <= 10) {
         image = "https://thumbs.gfycat.com/WarpedAchingHagfish-size_restricted.gif"
     }
@@ -168,12 +168,31 @@ function getImage(happy) {
 
 function update() {
     document.getElementById('happy').innerText = `${happy}`
+
     document.getElementById('dance6').innerText = `${automaticUpgrades.dance6.quantity}`
+
+    document.getElementById('dance6Price').innerText = `${automaticUpgrades.dance6.price}`
+
     document.getElementById('dance5').innerText = `${clickUpgrades.dance5.quantity}`
+
+    document.getElementById('dance5Price').innerText = `${clickUpgrades.dance5.price}`
+
     document.getElementById('dance4').innerText = `${clickUpgrades.dance4.quantity}`
+
+    document.getElementById('dance4Price').innerText = `${clickUpgrades.dance4.price}`
+
     document.getElementById('dance3').innerText = `${clickUpgrades.dance3.quantity}`
+
+    document.getElementById('dance3Price').innerText = `${clickUpgrades.dance3.price}`
+
     document.getElementById('dance2').innerText = `${clickUpgrades.dance2.quantity}`
+
+    document.getElementById('dance2Price').innerText = `${clickUpgrades.dance2.price}`
+
     document.getElementById('dance1').innerText = `${clickUpgrades.dance1.quantity}`
+
+    document.getElementById('dance1Price').innerText = `${clickUpgrades.dance1.price}`
+
     document.getElementById('imgSwap').innerHTML = `${happy}`
 }
 
